@@ -22,7 +22,7 @@ const Navbar = () => {
   return (
     <div className={style.wrapper}>
       <div className={style.leftMenu}>
-        <div className={style.logo}>Uber</div>
+        <div className={style.logo}>Welcome Wagons</div>
         <div className={style.menuItem}>Ride</div>
         <div className={style.menuItem}>Drive</div>
         <div className={style.menuItem}>More</div>

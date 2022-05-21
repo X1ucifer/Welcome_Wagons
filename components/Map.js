@@ -6,7 +6,7 @@ const style = {
   wrapper: `flex-1 h-full w-full`,
 }
 
-mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN
+mapboxgl.accessToken = `pk.eyJ1IjoiMXVjaWZlciIsImEiOiJjbDNnNHJ5MjgwYzZmM2NxN2F4dHMwb25uIn0.ih7w8o1xW-Uv2D0i9li9Pg`
 
 const Map = () => {
   const { pickupCoordinates, dropoffCoordinates } = useContext(UberContext)
@@ -15,7 +15,7 @@ const Map = () => {
     const map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/drakosi/ckvcwq3rwdw4314o3i2ho8tph',
-      center: [-99.29011, 39.39172],
+      center: [76.813073,28.6466773],
       zoom: 3,
     })
 

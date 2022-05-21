@@ -22,20 +22,23 @@ const RideSelector = () => {
   const { selectedRide, setSelectedRide, setPrice, basePrice } =
     useContext(UberContext)
 
-  console.log(basePrice)
+  console.log("s",basePrice)
+
+  const getdata = async () => {
+    try {
+      const response = await fetch('/api/db/getRideTypes')
+
+      const data = await response.json()
+      setCarList(data.data)
+      console.log("d",data)
+      setSelectedRide(data.data[0])
+    } catch (error) {
+      console.error(error)
+    }
+  }
 
   useEffect(() => {
-    ;(async () => {
-      try {
-        const response = await fetch('/api/db/getRideTypes')
-
-        const data = await response.json()
-        setCarList(data.data)
-        setSelectedRide(data.data[0])
-      } catch (error) {
-        console.error(error)
-      }
-    })()
+    getdata();
   }, [])
 
   return (
